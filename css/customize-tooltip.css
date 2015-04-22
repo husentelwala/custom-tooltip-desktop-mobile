@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+/*********** CORE ***********/
+body { font-family: 'Open Sans', sans-serif; }
+.custom-tooltip { margin:0px; }
+.custom-tooltip-parent { position:relative; display:block; }
+.custom-tooltip-msg { margin:auto; position:absolute; background:#000; color:#FFF; width:252px; padding:4px 10px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;  z-index:11 } 
+.custom-tooltip-msg:after { content:''; position:absolute; width:0px; height:0px; border:5px solid #CCC; margin:auto;  }
+.top .custom-tooltip-msg:after { left:0px; right:0px; bottom:-10px; border-color:#000 transparent transparent transparent  }
+.bottom .custom-tooltip-msg:after { left:0px; right:0px; top:-10px; border-color:transparent transparent #000  transparent }
+.left .custom-tooltip-msg:after { bottom:0px; left:-10px; top:00px; border-color:transparent #000 transparent transparent  }
+.right .custom-tooltip-msg:after { bottom:0px; right:-10px; top:00px; border-color:transparent transparent transparent #000 }
+.custom-tooltip-parent:hover .custom-tooltip-msg  { display:block; }
+/*********** THEME ***********/
+.container { width:200px; margin:0px auto; }
+.custom-tooltip { padding:0px; display:inline-block; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; font-size:16px;  }
+.spacing { padding:27px; margin-bottom:160px; }
+
+
