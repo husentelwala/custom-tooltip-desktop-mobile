@@ -105,6 +105,7 @@ $(document).ready(function(){
 				callback();
 			lastHeight = newHeight;
 			timer = setTimeout(run, 200);	
+			console.log(1);
 		})();
 	}
 	
