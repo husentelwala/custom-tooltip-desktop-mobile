@@ -10,6 +10,7 @@ body { font-family: 'Open Sans', sans-serif; }
 .bottom .custom-tooltip-msg:after { left:0px; right:0px; top:-10px; border-color:transparent transparent #000  transparent }
 .left .custom-tooltip-msg:after { bottom:0px; left:-10px; top:00px; border-color:transparent #000 transparent transparent  }
 .right .custom-tooltip-msg:after { bottom:0px; right:-10px; top:00px; border-color:transparent transparent transparent #000 }
+.custom-tooltip-msg  { display:none; }
 .custom-tooltip-parent:hover .custom-tooltip-msg  { display:block; }
 /*********** THEME ***********/
 .container { width:200px; margin:0px auto; }
