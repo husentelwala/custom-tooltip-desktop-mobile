@@ -7,23 +7,23 @@ $(document).ready(function(){
 	
 	$cust_tooltip=$('.custom-tooltip');
 	$cust_tooltip.wrap('<div class="custom-tooltip-parent"></div>');
-	condtionalTooltipAlignment();
+	var $defaultClass = 'custom-tooltip-parent';
+	$customTooltipParent = $('.custom-tooltip-parent');
+	$customTooltipParent.each(function(){
+		$(this).append('<p class="custom-tooltip-msg"></p>');
+		$(this).find('.custom-tooltip-msg').text($(this).find($cust_tooltip).attr('title'));
+	});
+	condtionalTooltipAlignment();	
 	function condtionalTooltipAlignment() {
 		$windowwidth=$(window).width();
-		$('.custom-tooltip-parent').each(function(){
-			$(this).append('<p class="custom-tooltip-msg"></p>');
-			$(this).find('.custom-tooltip-msg').text($(this).find($cust_tooltip).attr('title'));
+		$customTooltipParent.each(function(){		
 			$vertical_space_ttip_content=6;
 			$horizontal_space_ttip_content=10;
-			
 			$a_element_height_tooltip=$(this).find('.custom-tooltip').outerHeight();
 			$a_element_width_tooltip=$(this).find('.custom-tooltip').outerWidth();
 			$p_element_height_tooltip=$(this).find('.custom-tooltip-msg').outerHeight();
 			$p_element_width_tooltip=$(this).find('.custom-tooltip-msg').outerWidth();
 			$data_placement_tooltip= $(this).find($cust_tooltip).attr('data-placement');
-	
-			
-			
 			if($data_placement_tooltip==='top')
 			{
 				fn_tooltip_top(this);
@@ -69,28 +69,28 @@ $(document).ready(function(){
 				left : $p_left_position_tooltip
 			});
 		});
-	}
+	}	
 	function fn_tooltip_top(obj)
 	{
-		$(obj).attr('class','custom-tooltip-parent top');
+		$(obj).attr('class',$defaultClass+ ' top');
 		$p_top_position_tooltip=-($p_element_height_tooltip+$vertical_space_ttip_content);
 		$p_left_position_tooltip=-(($p_element_width_tooltip-$a_element_width_tooltip)/2);	
 	}
 	function fn_tooltip_bottom(obj)
 	{
-		$(obj).attr('class','custom-tooltip-parent bottom');
+		$(obj).attr('class',$defaultClass+' bottom');
 		$p_top_position_tooltip=($a_element_height_tooltip+$vertical_space_ttip_content);
 		$p_left_position_tooltip=-(($p_element_width_tooltip-$a_element_width_tooltip)/2);		
 	}
 	function fn_tooltip_left(obj)
 	{
-		$(obj).attr('class','custom-tooltip-parent left');	
+		$(obj).attr('class',$defaultClass+' left');	
 		$p_top_position_tooltip=-(($p_element_height_tooltip-$a_element_height_tooltip)/2);
 		$p_left_position_tooltip=($a_element_width_tooltip + $horizontal_space_ttip_content);
 	}
 	function fn_tooltip_right(obj)
 	{
-		$(obj).attr('class','custom-tooltip-parent right');	
+		$(obj).attr('class',$defaultClass+' right');	
 		$p_top_position_tooltip=-(($p_element_height_tooltip-$a_element_height_tooltip)/2);
 		$p_left_position_tooltip=-($p_element_width_tooltip + $horizontal_space_ttip_content);
 	}
