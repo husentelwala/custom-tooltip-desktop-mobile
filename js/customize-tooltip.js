@@ -1,7 +1,7 @@
 /*************************/
-/***** AUTHOR : EMP0699 
+/***** AUTHOR : HUSEN TELWALA 
 /***** DATE : 22-09-2014
-/***** VERSION 2 : 09-10-2014
+/***** VERSION 2 : 29-04-2014
 /*************************/
 $(document).ready(function(){
 	
